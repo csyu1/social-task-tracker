@@ -1,0 +1,5 @@
+[run]
+include = man_log/*
+omit = *migrations*, *tests*
+plugins =
+    django_coverage_plugin
