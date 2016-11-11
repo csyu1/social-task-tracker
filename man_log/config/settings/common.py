@@ -34,6 +34,8 @@ DJANGO_APPS = (
 
     # Admin
     'django.contrib.admin',
+
+    # my apps
 )
 THIRD_PARTY_APPS = (
     'crispy_forms',  # Form layouts
@@ -47,6 +49,7 @@ LOCAL_APPS = (
     # custom users app
     'man_log.users.apps.UsersConfig',
     # Your stuff: custom apps go here
+    'man_log.tracker.apps.TrackerConfig',
 )
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
@@ -230,8 +233,8 @@ AUTHENTICATION_BACKENDS = (
 
 # Some really nice defaults
 ACCOUNT_AUTHENTICATION_METHOD = 'username'
-ACCOUNT_EMAIL_REQUIRED = True
-ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
+ACCOUNT_EMAIL_REQUIRED = False
+ACCOUNT_EMAIL_VERIFICATION = 'none'
 
 ACCOUNT_ALLOW_REGISTRATION = env.bool('DJANGO_ACCOUNT_ALLOW_REGISTRATION', True)
 ACCOUNT_ADAPTER = 'man_log.users.adapters.AccountAdapter'
